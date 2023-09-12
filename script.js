@@ -5,22 +5,41 @@
 // the function should take two parametres
 // return a string that declares the winner of the round like so: "You Lose! Paper beats Rock"
 //
-
-function playRound(playerSelection, computerSelection) {
    function getComputerChoice(){
     const choice = ["rock", "paper", "scissors"];
     const randomComputerChoice = Math.floor(Math.random() * choice.length);
     return choice[randomComputerChoice];
 }
    
+    function getPlayerChoice(){
+        const playerChoice = prompt("Rock/Paper/Scissors: ").toUpperCase();
+        return playerChoice;
+    }
+
+    function playRound(playerSelection, computerSelection) {
+        // your code here!
+        if(playerSelection===computerSelection){
+            return "TIE";
+        }else if(playerSelection === "ROCK" && computerSelection === "scissors"){
+            return "You win! Rock beats Scissors";
+        }else if(playerSelection === "ROCK" && computerSelection === "paper"){
+            return "You lose! Paper beats Rock";
+        }else if (playerSelection === "PAPER" && computerSelection === "rock"){
+            return "You win! Paper beats Rock";
+        }else if (playerSelection === "PAPER" && computerSelection === "scissors"){
+            return "You lose! Scissors beats Paper";
+        }else if(playerSelection === "SCISSORS" && computerSelection === "paper"){
+            return "You win! Scissors beats Paper";
+        }else if(playerSelection === "SCISSORS" && computerSelection === "rock"){
+            return "You lose! Rock beats Scissors";
+        }else{
+            return "Try again";
+        }
 
 
+      }
 
-
-   
-}
-   
-  let playerSelection = prompt("Rock, Paper, Scissors: ").toLowerCase();
-
-  const computerSelection = getComputerChoice();
-  console.log(playRound(playerSelection, computerSelection));
+  
+      const playerSelection = getPlayerChoice();
+      const computerSelection = getComputerChoice();
+      console.log(playRound(playerSelection, computerSelection));
