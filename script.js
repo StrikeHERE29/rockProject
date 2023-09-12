@@ -4,7 +4,8 @@
 //create a function that plays a single round of Rock Paper Scissors.
 // the function should take two parametres
 // return a string that declares the winner of the round like so: "You Lose! Paper beats Rock"
-//
+//return winner after 5 games
+
    function getComputerChoice(){
     const choice = ["rock", "paper", "scissors"];
     const randomComputerChoice = Math.floor(Math.random() * choice.length);
@@ -15,6 +16,9 @@
         const playerChoice = prompt("Rock/Paper/Scissors: ").toUpperCase();
         return playerChoice;
     }
+
+
+
 
     function playRound(playerSelection, computerSelection) {
         // your code here!
@@ -32,12 +36,10 @@
             return "You win! Scissors beats Paper";
         }else if(playerSelection === "SCISSORS" && computerSelection === "rock"){
             return "You lose! Rock beats Scissors";
-        }else{
-            return "Try again";
         }
+    }
 
 
-      }
 
   
       const playerSelection = getPlayerChoice();
